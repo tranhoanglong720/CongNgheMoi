@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <link rel="stylesheet" href="index.css" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="content">
+      
+       <form id="delete" method="post" action="/delete" enctype="multipart/form-data">
+
+           <table border="1">
+               <tr>
+                   <th>Ten San Pham</th>
+                   <th>Ma San Pham</th>
+                   <th>So Luong </th>
+                   <th>Chon</th>
+               </tr>
+               <% for(let i=0;i< data.length;i++ ){
+                   %>
+               <tr>
+                   <td><%=data[i].TenSp%></td>
+                   <td><%=data[i].MaSp%></td>
+                   <td><%=data[i].SoLuong%></td>
+                   <td><input type="checkbox" name="<%=data[i].TenSp %>"/> </td>
+               </tr>
+               <% }%>
+           </table>
+           <a href="./Them" class="Qua">Trang Them Sp</a>
+           <input type="submit" value="Xoa" class="btn" />
+       </form>
+       
+    </div>
+</body>
+</html>

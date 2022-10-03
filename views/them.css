@@ -1,0 +1,13 @@
+form{
+    background-color: antiquewhite;
+    margin-top: 50px;
+    width: 100%;
+    height: 100%;   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   
+}
+span{
+    color: red;
+}

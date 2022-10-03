@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./them.css"/>
+    <title>Document</title>
+</head>
+<body>
+    <form id="create" action="/Them" method="post" enctype="multipart/form-data" onsubmit=" return Valid();">
+        
+        <input type="text" id="tensp" name="TenSp" placeholder="Nhap Ten  sp"/>
+        <span id="errtensp"></span>
+
+        <input type="text"  id="masp" name="MaSp" placeholder="Nhap Ma  sp"/>
+        <span id="errmasp"></span>
+
+        <input type="number" id="sl" name="SoLuong" placeholder="Nhap SoLuong"/>
+        <span id="errsl"></span>
+
+        <input type="submit" value="Them San Pham" />
+    </form>
+    <script type="text/javascript" >
+            function Valid(){
+                var tensp=document.getElementById('tensp').value;
+                var errtensp=document.getElementById('errtensp');
+                var rextensp=/^(([A-Za-z]+[\-\']?)*([A-Za-z]+)?\s)+([A-Za-z]+[\-\']?)*([A-Za-z]+)?$/;
+
+                var masp=document.getElementById('masp').value;
+                var errmasp=document.getElementById('errmasp');
+                var rexmasp=/^(HD|DC)[0-9]{2}$/;
+
+                var sl=document.getElementById('sl').value;
+                var errsl=document.getElementById('errsl');
+                var rexsl=/^\d+$/;
+              
+                if(tensp =="" ||tensp ==null){
+                    errtensp.innerHTML ="Ten Sp Khong De trong";
+                }else if(!rextensp.test(tensp)){
+                    errtensp.innerHTML ="Ten san pham khong hop le";
+                }
+                else{
+                    errtensp.innerHTML="";
+                    
+                }
+                //
+                if(masp =="" ||masp ==null){
+                    errmasp.innerHTML ="Ma Sp Khong De trong";
+                }else if(!rexmasp.test(masp)){
+                    errmasp.innerHTML ="Ma san pham khong hop le";
+                }
+                else{
+                    errmasp.innerHTML="";
+                    
+
+                }
+                //
+                if(sl =="" ||sl ==null){
+                    errsl.innerHTML ="Ten Sp Khong De trong";
+                }
+                else if(sl<=0){
+                    errsl.innerHTML="So Luong Phai lon hon 0";
+                }
+                else{
+                    errsl.innerHTML="";
+                    
+
+                }
+                //
+                if(tensp && masp && sl){   
+                    return true;
+                }       
+                return false;   
+             }
+            
+    </script>
+</body>
+</html>
